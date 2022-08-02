@@ -2,6 +2,19 @@ import Card from "./components/Card";
 import Drawer from "./components/Drawer";
 import Header from "./components/Header";
 
+const arr = [
+  {
+    name: 'Мужские кроссовки Nike Blazer Mid Suede',
+    price: 12999,
+    imageUrl: 'img/sneakers/1.jpg'
+  },
+  {
+    name: 'Мужские кроссовки Nike Air Max',
+    price: 15600,
+    imageUrl: 'img/sneakers/2.jpg'
+  },
+]
+
 function App() {
   return (
     <div className="wrapper clear">
@@ -15,10 +28,13 @@ function App() {
             <input type="text" placeholder="Поиск..." />
           </div>
         </div>
-        <div className="d-flex"> {/*Блок с товарами*/}
-        <Card/>
-        <Card/>
-        </div>
+        <div className="d-flex">
+          {/* <Card title={'Мужские кроссовки Nike Blazer Mid Suede'} price={'12999'} imageUrl={'img/sneakers/1.jpg'}/>
+          <Card title={'Мужские кроссовки Nike Air Max'} price={'15600'} imageUrl={'img/sneakers/2.jpg'}/> */}
+          {arr.map(it => {
+            return <Card title={it.title} price={it.price} imageUrl={it.imageUrl} />
+          })}
+      </div> 
       </div>
     </div>
   );
