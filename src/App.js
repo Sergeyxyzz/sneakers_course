@@ -1,21 +1,32 @@
-import Card from "./components/Card";
+import Card from "./components/card/Card";
 import Drawer from "./components/Drawer";
 import Header from "./components/Header";
 
 const arr = [
   {
-    name: 'Мужские кроссовки Nike Blazer Mid Suede',
+    title: 'Мужские кроссовки Nike Blazer Mid Suede',
     price: 12999,
     imageUrl: 'img/sneakers/1.jpg'
   },
   {
-    name: 'Мужские кроссовки Nike Air Max',
+    title: 'Мужские кроссовки Nike Air Max',
     price: 15600,
     imageUrl: 'img/sneakers/2.jpg'
+  },
+  {
+    title: 'Мужские кроссовки Nike Air Max',
+    price: 11600,
+    imageUrl: 'img/sneakers/3.jpg'
+  },
+  {
+    title: 'Мужские кроссовки Nike Air Max',
+    price: 20000,
+    imageUrl: 'img/sneakers/4.jpg'
   },
 ]
 
 function App() {
+  
   return (
     <div className="wrapper clear">
       <Drawer/>
@@ -32,7 +43,7 @@ function App() {
           {/* <Card title={'Мужские кроссовки Nike Blazer Mid Suede'} price={'12999'} imageUrl={'img/sneakers/1.jpg'}/>
           <Card title={'Мужские кроссовки Nike Air Max'} price={'15600'} imageUrl={'img/sneakers/2.jpg'}/> */}
           {arr.map(it => {
-            return <Card title={it.title} price={it.price} imageUrl={it.imageUrl} />
+            return <Card title={it.title} price={it.price} imageUrl={it.imageUrl} onClick={() => console.log(it)} />
           })}
       </div> 
       </div>
